@@ -40,7 +40,7 @@ module.exports = async config => {
 
     const content = await page.content()
     const $ = cheerio.load(content)
-    const articles = $('a[href^="./article"]').closest('div[jslog]')
+    const articles = $('a[href^="./article"]:noth-child(1)').closest('div[jslog]')
     let results = []
     let i = 0
     const urlChecklist = []
